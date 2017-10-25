@@ -3,13 +3,13 @@ import Product from '../../models/Product';
 import './Product.css';
 
 class ProductComponent extends Component {
-  render() {
+  render () {
     return (
-      <div className="Product">
-        <div className="Product-name">
+      <div className='Product'>
+        <div className='Product-name'>
           {this.props.product.name}
         </div>
-        <div className="Product-price">
+        <div className='Product-price'>
           £{this.props.product.getFormattedPrice()}
         </div>
       </div>
@@ -18,7 +18,7 @@ class ProductComponent extends Component {
 }
 
 ProductComponent.propTypes = {
-  product: React.PropTypes.instanceOf(Product),
+  product: React.PropTypes.instanceOf(Product)
 };
 
 export default ProductComponent;

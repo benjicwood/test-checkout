@@ -4,10 +4,10 @@ import Product from '../../models/Product';
 import './ProductList.css';
 
 class ProductListComponent extends Component {
-  render() {
+  render () {
     return (
-      <div className="ProductList">
-        <h2 className="ProductList-title">Our Products</h2>
+      <div className='ProductList'>
+        <h2 className='ProductList-title'>Our Products</h2>
         {this.props.products.map(x =>
           <ProductComponent product={x} key={x.code} />
         )}
@@ -19,7 +19,7 @@ class ProductListComponent extends Component {
 ProductListComponent.propTypes = {
   products: React.PropTypes.arrayOf(
     React.PropTypes.instanceOf(Product)
-  ),
+  )
 };
 
 export default ProductListComponent;

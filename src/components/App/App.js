@@ -5,13 +5,13 @@ import aProducts from '../../config/products';
 import './App.css';
 
 class AppComponent extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className='App'>
+        <div className='App-header'>
           <h1>Welcome to the Checkout</h1>
         </div>
-        <div className="App-body">
+        <div className='App-body'>
           <ProductList products={aProducts} />
           <Order />
         </div>
