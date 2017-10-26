@@ -1,5 +1,14 @@
 import * as types from '../actions/types';
 
-export const initialState = {};
+export default function products (initialState = {}, action) {
+  const newState = {...initialState};
 
-export default function reducer (state, action) {}
+  switch (action.type) {
+    case types.SET_PRODUCTS: return setProducts(newState, action);
+    default: return newState;
+  }
+}
+
+function setProducts (newState, action) {
+  return Object.assign(newState, action);
+}

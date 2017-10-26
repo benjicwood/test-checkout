@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
-import ProductList from '../ProductList';
+import { connect } from 'react-redux';
 import Order from '../Order';
-import aProducts from '../../config/products';
+import ProductList from '../ProductList';
 import './App.css';
 
+import { setProducts } from '../../actions/actions';
+
 class AppComponent extends Component {
+  componentWillMount () {
+    this.props.setProducts();
+  }
   render () {
+    if (!this.props.products) return <div>Loading...</div>;
     return (
       <div className='App'>
         <div className='App-header'>
           <h1>Welcome to the Checkout</h1>
         </div>
         <div className='App-body'>
-          <ProductList products={aProducts} />
+          <ProductList products={this.props.products} />
           <Order />
         </div>
       </div>
@@ -20,4 +26,16 @@ class AppComponent extends Component {
   }
 }
 
-export default AppComponent;
+const mapStateToProps = (state) => {
+  return {
+    products: state.products
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setProducts: () => dispatch(setProducts())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppComponent);

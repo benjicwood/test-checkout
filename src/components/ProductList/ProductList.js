@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ProductComponent from '../Product';
 import Product from '../../models/Product';
 import './ProductList.css';
@@ -17,8 +18,7 @@ class ProductListComponent extends Component {
 }
 
 ProductListComponent.propTypes = {
-  products: React.PropTypes.arrayOf(
-    React.PropTypes.instanceOf(Product)
+  products: PropTypes.arrayOf(PropTypes.instanceOf(Product)
   )
 };
 
