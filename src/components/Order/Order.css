@@ -6,6 +6,30 @@
   max-width: 600px;
 }
 
+.ProductList {
+  margin-left: 10px;
+  border: 2px solid #333;
+  padding: 15px 10px;
+  width: 40%;
+  max-width: 600px;
+}
+
+.Product {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em 1em;
+  background: indianred;
+  color: white;
+}
+
 .Order-title {
   margin-top: 0;
+}
+
+.Order-name {
+  font-weight: bold;
+}
+
+.Order-price {
+  font-family: monospace;
 }
