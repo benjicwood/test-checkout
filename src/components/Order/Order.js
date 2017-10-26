@@ -7,6 +7,9 @@ class OrderComponent extends Component {
     return (
       <div className='Order'>
         <h2 className='Order-title'>Your Order</h2>
+        {this.props.basket.map((product, i) => {
+          return <p key={i}>{product.name}</p>;
+        })}
       </div>
     );
   }
