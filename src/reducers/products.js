@@ -10,5 +10,6 @@ export default function products (initialState = {}, action) {
 }
 
 function setProducts (newState, action) {
+  delete action.type;
   return Object.assign(newState, action);
 }

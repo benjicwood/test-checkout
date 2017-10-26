@@ -9,9 +9,8 @@ export const setProducts = () => {
 };
 
 export const selectItem = (productCode) => {
-  console.log(productCode);
   return {
-    type: types.SET_ITEM_IN_BASKET
-
+    type: types.SET_ITEM_IN_BASKET,
+    selectedProduct: productCode
   };
 };

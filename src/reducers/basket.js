@@ -10,5 +10,7 @@ export default function basket (initialState = {}, action) {
 }
 
 function selectItem (newState, action) {
+  console.log(action);
+  delete action.type;
   return Object.assign(newState, action);
 }
