@@ -10,7 +10,10 @@ export default function basket (initialState = {}, action) {
 }
 
 function selectItem (newState, product) {
-  // product.quy = 0;
-  Object.assign(product, {qty: 0 });
-  return newState.concat(product);
+  if (newState.indexOf(product) === -1) {
+    Object.assign(product, {qty: 1});
+    return newState.concat(product);
+  }
+  product.qty += 1;
+  return newState;
 }
