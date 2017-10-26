@@ -8,9 +8,9 @@ export const setProducts = () => {
   };
 };
 
-export const selectItem = (productCode) => {
+export const selectItem = (product) => {
   return {
     type: types.SET_ITEM_IN_BASKET,
-    selectedProduct: productCode
+    selectedProduct: product
   };
 };

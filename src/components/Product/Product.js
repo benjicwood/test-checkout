@@ -7,12 +7,12 @@ import './Product.css';
 import { selectItem } from '../../actions/actions';
 
 class ProductComponent extends Component {
-  handleClick (productCode) {
-    this.props.dispatch(selectItem(productCode));
+  handleClick (product) {
+    this.props.dispatch(selectItem(product));
   }
   render () {
     return (
-      <div className='Product' onClick={() => this.handleClick(this.props.product.code)}>
+      <div className='Product' onClick={() => this.handleClick(this.props.product)}>
         <div className='Product-name'>
           {this.props.product.name}
         </div>
