@@ -37,3 +37,8 @@
 .Order-price {
   font-family: monospace;
 }
+
+.price {
+  float: right;
+  font-weight: normal;
+}

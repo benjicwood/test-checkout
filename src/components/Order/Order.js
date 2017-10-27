@@ -17,11 +17,8 @@ class OrderComponent extends Component {
             </div>
           </div>;
         })}
-        <h4>
-          Total: {formattedPrice(this.props.total.reduce((prev, curr) => prev + curr))}
-        </h4>
-        <h4>
-          Discount: {discountedPrice(this.props.total.reduce((prev, curr) => prev + curr))}
+        <h4 className='price'>
+          Total: {formattedPrice(this.props.total.reduce((prev, curr) => prev + curr))} Discount: {discountedPrice(this.props.total.reduce((prev, curr) => prev + curr))}
         </h4>
       </div>
     );
