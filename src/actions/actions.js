@@ -8,6 +8,13 @@ export const setProducts = () => {
   };
 };
 
+export const setDiscount = (itemPrice) => {
+  return {
+    type: types.SET_DISCOUNT,
+    discount: itemPrice
+  };
+};
+
 export const selectItem = (product) => {
   return {
     type: types.SET_ITEM_IN_BASKET,
@@ -26,12 +33,5 @@ export const bogofOffer = (product) => {
   return {
     type: types.BOGOF_OFFER,
     selectedProduct: product
-  };
-};
-
-export const setDiscount = (itemPrice) => {
-  return {
-    type: types.SET_DISCOUNT,
-    discount: itemPrice
   };
 };

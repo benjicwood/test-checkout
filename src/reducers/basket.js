@@ -31,7 +31,6 @@ function selectItem (newState, product) {
       const qtyOfPairsOfAsparagusInBasket = ('' + (asparagusInBasket / 2)).split('.')[0];
       console.log(qtyOfPairsOfAsparagusInBasket);
       newState.total += product.price;
-  //    newState.discount += (+qtyOfPairsOfAsparagusInBasket * product.price / 2);
     }
   } else {
     newState.total += product.price;

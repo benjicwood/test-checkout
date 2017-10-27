@@ -29,9 +29,7 @@ class AppComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products.products,
-    basket: state.basket,
-    total: state.total,
-    discount: state.discount
+    basket: state.basket
   };
 };
 
