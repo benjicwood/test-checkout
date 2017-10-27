@@ -1,16 +1,15 @@
 import * as types from '../actions/types';
 
-export default function discount (initialState = {}, action) {
+export default function price (initialState = {}, action) {
   const newState = Object.assign([0], initialState);
 
   switch (action.type) {
-    case types.SET_DISCOUNT: return setDiscount(newState, action.discount);
+    case types.SET_PRICE: return setPrice(newState, action.price);
     default: return newState;
   }
 }
 
-function setDiscount (newState, itemPrice) {
-  console.log(newState);
+function setPrice (newState, itemPrice) {
   newState.push(itemPrice);
   var total = newState.reduce((x, y) => x + y);
   newState = [];

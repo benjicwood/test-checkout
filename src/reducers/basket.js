@@ -11,11 +11,31 @@ export default function basket (initialState = {}, action) {
 }
 
 function selectItem (newState, product) {
-  if (newState.indexOf(product) === -1) {
-    Object.assign(product, {qty: 1});
-    return newState.concat(product);
+  if (!newState.basket) newState.basket = [];
+  if (!newState.total) newState.total = 0;
+  if (!newState.discount) newState.discount = 0;
+
+  if (newState.basket.indexOf(product) === -1) {
+    product.qty = 1;
+    newState.basket.push(product);
+  } else {
+    product.qty += 1;
   }
-  product.qty += 1;
+  if (product.code === 'G95') {
+    const asparagusInBasket = newState.basket.find(product => product.code === 'G95').qty;
+    const pairsOfAsparagusInBasket = asparagusInBasket % 2;
+    if (pairsOfAsparagusInBasket === 0) {
+      newState.total += product.price;
+      newState.discount += product.price;
+    } else {
+      const qtyOfPairsOfAsparagusInBasket = ('' + (asparagusInBasket / 2)).split('.')[0];
+      console.log(qtyOfPairsOfAsparagusInBasket);
+      newState.total += product.price;
+  //    newState.discount += (+qtyOfPairsOfAsparagusInBasket * product.price / 2);
+    }
+  } else {
+    newState.total += product.price;
+  }
   return newState;
 }
 

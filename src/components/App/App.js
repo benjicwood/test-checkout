@@ -19,7 +19,7 @@ class AppComponent extends Component {
         </div>
         <div className='App-body'>
           <ProductList products={this.props.products} />
-          <Order basket={this.props.basket} total={this.props.total} discount={this.props.discount} />
+          <Order basket={this.props.basket} total={this.props.total} />
         </div>
       </div>
     );
