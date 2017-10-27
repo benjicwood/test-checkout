@@ -41,4 +41,7 @@
 .price {
   float: right;
   font-weight: normal;
+  border: 2px solid indianred;
+  padding: 2px;
+  margin: 1px 6.5px 1px 1px;
 }
