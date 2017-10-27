@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import Product from '../../models/Product';
 import './Product.css';
 
-import { selectItem } from '../../actions/actions';
+import { selectItem, setTotal } from '../../actions/actions';
 
 class ProductComponent extends Component {
   handleClick (product) {
     this.props.dispatch(selectItem(product));
+    var itemPrice = this.props.product.price;
+    this.props.dispatch(setTotal(itemPrice));
   }
   render () {
     return (

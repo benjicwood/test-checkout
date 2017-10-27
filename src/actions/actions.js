@@ -14,3 +14,10 @@ export const selectItem = (product) => {
     selectedProduct: product
   };
 };
+
+export const setTotal = (itemPrice) => {
+  return {
+    type: types.SET_TOTAL,
+    total: itemPrice
+  };
+};

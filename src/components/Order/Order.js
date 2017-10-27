@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './Order.css';
-import { formattedPrice } from '../../helpers/price';
+import { formattedPrice, discountedPrice } from '../../helpers/price';
 
 class OrderComponent extends Component {
   render () {
-    console.log(this.props.basket);
     return (
       <div className='ProductList'>
         <h2 className='Order-title'>Your Order</h2>
@@ -18,6 +17,12 @@ class OrderComponent extends Component {
             </div>
           </div>;
         })}
+        <h4>
+          Total: {formattedPrice(this.props.total.reduce((prev, curr) => prev + curr))}
+        </h4>
+        <h4>
+          Discount: {discountedPrice(this.props.total.reduce((prev, curr) => prev + curr))}
+        </h4>
       </div>
     );
   }

@@ -19,7 +19,7 @@ class AppComponent extends Component {
         </div>
         <div className='App-body'>
           <ProductList products={this.props.products} />
-          <Order basket={this.props.basket} />
+          <Order basket={this.props.basket} total={this.props.total} />
         </div>
       </div>
     );
@@ -29,7 +29,8 @@ class AppComponent extends Component {
 const mapStateToProps = (state) => {
   return {
     products: state.products.products,
-    basket: state.basket
+    basket: state.basket,
+    total: state.total
   };
 };
 
