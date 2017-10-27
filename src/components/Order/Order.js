@@ -30,10 +30,10 @@ class OrderComponent extends Component {
           </div>;
         })}
         <h4 className='price'>
-          Total: {formattedPrice(
+          Normal Price: {formattedPrice(
             this.props.total.reduce(
               (prev, curr) => prev + curr))
-          } Discount: {discountedPrice(
+          } Discount Price: {discountedPrice(
             this.props.total.reduce(
               (prev, curr) => prev + curr))
             }
