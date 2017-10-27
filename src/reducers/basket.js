@@ -5,6 +5,7 @@ export default function basket (initialState = {}, action) {
 
   switch (action.type) {
     case types.SET_ITEM_IN_BASKET: return selectItem(newState, action.selectedProduct);
+    case types.BOGOF_OFFER: return bogofOffer(newState, action.selectedProduct);
     default: return newState;
   }
 }
@@ -15,5 +16,14 @@ function selectItem (newState, product) {
     return newState.concat(product);
   }
   product.qty += 1;
+  return newState;
+}
+
+function bogofOffer (newState, product) {
+  if (product.qty % 2 === 0) {
+    Object.assign(product, {bogof: 'BOGOF!'});
+  } else {
+    Object.assign(product, {bogof: ''});
+  }
   return newState;
 }

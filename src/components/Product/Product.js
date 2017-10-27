@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import Product from '../../models/Product';
 import './Product.css';
 
-import { selectItem, setTotal } from '../../actions/actions';
+import { selectItem, setTotal, bogofOffer } from '../../actions/actions';
 
 class ProductComponent extends Component {
   handleClick (product) {
     this.props.dispatch(selectItem(product));
     var itemPrice = this.props.product.price;
     this.props.dispatch(setTotal(itemPrice));
+    if (this.props.product.code === 'G95') {
+      this.props.dispatch(bogofOffer(product));
+    }
   }
   render () {
     return (

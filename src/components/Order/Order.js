@@ -8,6 +8,18 @@ class OrderComponent extends Component {
       <div className='OrderList'>
         <h2 className='Order-title'>Your Order</h2>
         {this.props.basket.map((product, i) => {
+          // div for if asparagus is BOGOF
+          if (product.code === 'G95') {
+            return <div className='Order' key={i}>
+              <div className='Order-name'>
+                {product.name} x{product.qty} {product.bogof}
+              </div>
+              <div className='Order-price'>
+                £{formattedPrice(product.price * (product.qty))}
+              </div>
+            </div>;
+          }
+          // div for normal price items
           return <div className='Order' key={i}>
             <div className='Order-name'>
               {product.name} x{product.qty}

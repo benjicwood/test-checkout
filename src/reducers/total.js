@@ -11,6 +11,5 @@ export default function total (initialState = {}, action) {
 
 function setTotal (newState, itemPrice) {
   newState.push(itemPrice);
-  console.log(newState);
   return newState;
 }

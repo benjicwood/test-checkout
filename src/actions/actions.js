@@ -21,3 +21,10 @@ export const setTotal = (itemPrice) => {
     total: itemPrice
   };
 };
+
+export const bogofOffer = (product) => {
+  return {
+    type: types.BOGOF_OFFER,
+    selectedProduct: product
+  };
+};
