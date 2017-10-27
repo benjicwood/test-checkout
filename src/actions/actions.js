@@ -28,3 +28,10 @@ export const bogofOffer = (product) => {
     selectedProduct: product
   };
 };
+
+export const setDiscount = (itemPrice) => {
+  return {
+    type: types.SET_DISCOUNT,
+    discount: itemPrice
+  };
+};

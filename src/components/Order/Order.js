@@ -19,7 +19,7 @@ class OrderComponent extends Component {
               </div>
             </div>;
           }
-          // div for normal price items
+          // div for normal price items 7.47 4.15
           return <div className='Order' key={i}>
             <div className='Order-name'>
               {product.name} x{product.qty}
@@ -30,13 +30,7 @@ class OrderComponent extends Component {
           </div>;
         })}
         <h4 className='price'>
-          Normal Price: {formattedPrice(
-            this.props.total.reduce(
-              (prev, curr) => prev + curr))
-          } Discount Price: {discountedPrice(
-            this.props.total.reduce(
-              (prev, curr) => prev + curr))
-            }
+          Normal Price: {formattedPrice(this.props.total)} Discount Price: { discountedPrice(this.props.discount)}
         </h4>
       </div>
     );
