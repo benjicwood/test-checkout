@@ -1,12 +1,12 @@
 .Order {
-  margin-right: 10px;
-  border: 2px solid #333;
-  padding: 15px 10px;
-  width: 40%;
-  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em 1em;
+  background: indianred;
+  color: white;
 }
 
-.ProductList {
+.OrderList {
   margin-left: 10px;
   border: 2px solid #333;
   padding: 15px 10px;
@@ -14,7 +14,11 @@
   max-width: 600px;
 }
 
-.Product {
+.OrderList > .Order {
+  margin: 7px;
+}
+
+.Order {
   display: flex;
   justify-content: space-between;
   padding: 0.8em 1em;

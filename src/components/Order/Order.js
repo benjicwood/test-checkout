@@ -5,10 +5,10 @@ import { formattedPrice, discountedPrice } from '../../helpers/price';
 class OrderComponent extends Component {
   render () {
     return (
-      <div className='ProductList'>
+      <div className='OrderList'>
         <h2 className='Order-title'>Your Order</h2>
         {this.props.basket.map((product, i) => {
-          return <div className='Product' key={i}>
+          return <div className='Order' key={i}>
             <div className='Order-name'>
               {product.name} x{product.qty}
             </div>
