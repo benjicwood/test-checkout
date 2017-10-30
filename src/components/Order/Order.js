@@ -31,7 +31,7 @@ class OrderComponent extends Component {
           </div>;
         })}
         <h4 className='price'>
-          Normal Price: {formattedPrice(this.props.basket.total)} Discount Price: { discountedPrice(this.props.basket.total - this.props.basket.discount)}
+          Normal Price: £{formattedPrice(this.props.basket.total)} Discount Price: £{ discountedPrice(this.props.basket.total - this.props.basket.discount)}
         </h4>
       </div>
     );

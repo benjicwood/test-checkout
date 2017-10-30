@@ -9,7 +9,9 @@ import allReducers from '../../reducers/index.js';
 
 const store = createStore(allReducers);
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Provider store={store}><App /></ Provider>, div);
+describe('App', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<Provider store={store}><App /></ Provider>, div);
+  });
 });

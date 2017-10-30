@@ -28,8 +28,6 @@ function selectItem (newState, product) {
       newState.total += product.price;
       newState.discount += product.price;
     } else {
-      const qtyOfPairsOfAsparagusInBasket = ('' + (asparagusInBasket / 2)).split('.')[0];
-      console.log(qtyOfPairsOfAsparagusInBasket);
       newState.total += product.price;
     }
   } else {
